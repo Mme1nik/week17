@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div id="container"></div>
+  <textarea id='newComment' type="text"></textarea><br>
+  <button onclick="getComment()">Send</button>
+      <script>
+        let vi='viagra';
+        let x= 'xxx';
+        let newStr;
+        let comments = [];
+        function getComment(str){
+          let text = document.querySelector('#newComment');
+          newStr= text.value;
+          let res = newStr.replace(/viagra|xxx/gi, '***');
+          console.log(res);
+          comments.push(res);
+          text.value = '';
+          let optionString = '';
+          for (let elem of comments){
+            optionString += `<div class="border"><span>${elem}</span></div>`;
+          }
+          console.log(comments);
+          document.getElementById("container").innerHTML = optionString;
+        }
+      </script>
+</body>
+</html>

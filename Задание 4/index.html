@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <script>
+        function rand(){
+          let min = -10;
+          let max = 10;
+          let resNum;
+          let randNums = [];
+          let i = 0;
+          while(i < 10){
+            resNum = Math.round(min + Math.random()*(10+10));
+            console.log(resNum);
+            randNums.push(resNum);
+            i++;
+          }
+          console.log(randNums);
+          let resSum = randNums.reduce((sum, current) => sum + current, 0);
+          let multyple = randNums.reduce((mult, current) => mult * current, 1);
+          console.log(resSum);
+          let massive = `Сгенерировали: ${randNums.join(',')}`;
+          let minimum = `Минимальное: ${Math.min(...randNums)}`;
+          let maximum = `Максимальное: ${Math.max(...randNums)}`;
+          let srednee = `Среднее арифмитическое: ${Math.abs(resSum/10)}`;
+          let summa = `Сумма чисел: ${resSum}`;
+          let proizvedenie = `Произведение чисел: ${multyple}`;
+          console.log(massive);
+          console.log(minimum);
+          console.log(maximum);
+          console.log(srednee);
+          console.log(summa);
+          console.log(proizvedenie);
+          return randNums;
+        }
+        alert(rand());
+      </script>
+</body>
+</html>
